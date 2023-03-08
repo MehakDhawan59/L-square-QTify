@@ -1,0 +1,22 @@
+.search {
+    padding: 14px 20px;
+    border-radius: 8px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 1px solid var(--color-black);
+    width: 502px;
+
+}
+
+.searchbutton {
+    padding: 14px 20px;
+    border-radius: 0px 8px 8px 0px;
+    height: 100%;
+    border: 1px solid var(--color-black);
+    cursor: pointer;
+}
+
+.searchbar {
+    display: flex;
+    height: 48px;
+}
