@@ -1,0 +1,37 @@
+.cardimage {
+
+    border-radius: 10px;
+}
+
+.cardimage img {
+    width: 100%;
+}
+
+.cardsection {
+    width: 200px;
+    padding-left: 31px;
+    height: 170px;
+}
+
+.cardfollowers {
+    padding: 6px 73px 6px 6px;
+    background-color: var(--color-white);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.cardfollowerstext {
+    background-color: var(--color-black);
+    padding: 4px 8px;
+    border-radius: 10px;
+    color: var(--color-white);
+    font-size: 10px;
+    line-height: 15px;
+    vertical-align: middle;
+}
+
+.cardtitle {
+    padding-top: 6px;
+    color: var(--color-white);
+    font-size: 14px;
+}

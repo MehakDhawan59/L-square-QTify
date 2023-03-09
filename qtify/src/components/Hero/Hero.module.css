@@ -1,0 +1,12 @@
+.herotext {
+    color: var(--color-white);
+    font-size: 32px;
+
+}
+
+.herosection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 29px 0px;
+}
