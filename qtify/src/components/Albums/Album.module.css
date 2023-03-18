@@ -1,0 +1,24 @@
+.albumheading {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-white);
+    margin-bottom: 18px;
+
+}
+
+.albumheading2 p {
+    color: var(--color-primary);
+    font-size: var(--font-size-f1);
+    font-weight: var(--font-weight-w1);
+}
+
+.albumheading1 p {
+    font-size: var(--font-size-f1);
+    font-weight: var(--font-weight-w1);
+}
+
+.albumcards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}

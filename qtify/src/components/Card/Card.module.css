@@ -1,16 +1,17 @@
 .cardimage {
-
+    overflow: hidden;
     border-radius: 10px;
 }
 
 .cardimage img {
     width: 100%;
+    height: 159px
 }
 
 .cardsection {
-    width: 200px;
-    padding-left: 31px;
-    height: 170px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .cardfollowers {
@@ -32,6 +33,9 @@
 
 .cardtitle {
     padding-top: 6px;
-    color: var(--color-white);
     font-size: 14px;
+}
+
+.cardtitle p {
+    color: var(--color-white);
 }
