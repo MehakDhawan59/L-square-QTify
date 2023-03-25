@@ -10,6 +10,7 @@
     color: var(--color-primary);
     font-size: var(--font-size-f1);
     font-weight: var(--font-weight-w1);
+    cursor: pointer;
 }
 
 .albumheading1 p {
@@ -21,4 +22,11 @@
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+}
+
+.displaycards {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+
 }

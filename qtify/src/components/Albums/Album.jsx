@@ -1,41 +1,45 @@
 import React, { useState, useEffect } from 'react'
 import styles from './Album.module.css';
 import Card from '../Card/Card';
-import axios from 'axios';
+import Carousal from '../Carousal/Carousal';
 
-function Album() {
 
-    const [topAlbums, setTopAlbums] = useState([]);
+function Album({ dataSource, title, margin }) {
 
-    const fetchTopAlbums = async () => {
-        try {
-            const res = await axios.get("https://qtify-backend-labs.crio.do/albums/top");
-            const data = res.data;
-            console.log("data", data);
-            setTopAlbums(data);
-        }
-        catch (error) {
-            console.log(error.message);
+    const [cardsData, setCardsData] = useState([]);
+    const [isShowAll, setIsShowAll] = useState(false);
+    useEffect(() => {
+        dataSource().then((data) => {
+            setCardsData(data);
+        })
 
-        }
+    }, [])
+
+    const handleToggle = () => {
+        setIsShowAll((prevState) => !prevState);
     }
 
-    useEffect(() => {
-        fetchTopAlbums();
-    }, []);
     return (
-        <div className={styles.albumcontainer}>
+        <div className={styles.albumcontainer} style={{ marginTop: margin ? margin : "0" }}>
             <div className={styles.albumheading}>
                 <div className={styles.albumheading1}>
-                    <p>Top Albums</p>
+                    <p>{title}</p>
                 </div>
-                <div className={styles.albumheading2}>
-                    <p>Show All</p>
+                <div className={styles.albumheading2} onClick={handleToggle}>
+                    <p>{isShowAll ? "Collapse" : "Show All"}</p>
                 </div>
             </div>
-            <div className={styles.albumcards}>
-                <Card data={topAlbums} />
-            </div>
+            {isShowAll ? (
+                <div className={styles.displaycards}>
+                    {cardsData.map((card, index) => (
+                        <Card data={{ title: card.title, index: index, image: card.image, follows: card.follows }} />
+                    ))}
+                </div>
+            ) : (
+                <Carousal data={cardsData} renderComponent={(data) => <Card data={data} />} />
+            )
+
+            }
 
         </div>
     )
