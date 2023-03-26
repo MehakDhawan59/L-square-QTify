@@ -15,7 +15,11 @@ function Faqs() {
     return (
         <div>
             <h2 style={{ textAlign: "center" }}>FAQ's</h2>
-            <Accordians data={query} />
+            {
+                query.map((ele) => (
+                    <Accordians data={ele} />
+                ))
+            }
         </div>
     )
 }

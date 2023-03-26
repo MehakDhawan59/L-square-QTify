@@ -5,7 +5,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export default function ControlledAccordions({ data }) {
+function ControlledAccordions({ data }) {
     const [expanded, setExpanded] = React.useState(false);
 
     const handleChange = (panel) => (event, isExpanded) => {
@@ -13,14 +13,15 @@ export default function ControlledAccordions({ data }) {
     };
 
     return (
-        <div>
-            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <div style={{ marginTop: "20px", padding: "0px 50px" }}>
+            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} style={{ borderColor: "var(--color-white)", border: "1px solid white", }}>
                 <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
+                    expandIcon={<ExpandMoreIcon sx={{ color: "var(--color-primary)" }} />}
                     aria-controls="panel1bh-content"
                     id="panel1bh-header"
+                    style={{ backgroundColor: "var(--color-black)", color: "var(--color-white)", }}
                 >
-                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                    <Typography sx={{ flexShrink: 0 }}>
                         {data.summary}
                     </Typography>
                 </AccordionSummary>
@@ -33,3 +34,5 @@ export default function ControlledAccordions({ data }) {
         </div>
     );
 }
+
+export default ControlledAccordions;
