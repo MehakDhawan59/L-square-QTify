@@ -1,9 +1,12 @@
 import React from 'react'
-import HomePage from './components/Home/HomePage'
+import HomePage from './components/Home/HomePage';
+import { StyledEngineProvider } from '@mui/material/styles';
 function App() {
   return (
     <>
-      <HomePage />
+      <StyledEngineProvider injectFirst>
+        <HomePage />
+      </StyledEngineProvider>
     </>
   )
 }
